@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %}Add Student{% endblock %}
+{% block content %}
+<div class="max-w-lg mx-auto bg-white p-8 shadow-lg rounded-lg">
+    <h2 class="text-2xl font-bold mb-4">Add Student</h2>
+    <form method="POST">
+        <div class="mb-4">
+            <label for="name" class="block text-gray-700">Student Name</label>
+            <input type="text" id="name" name="name" required class="w-full p-2 border rounded">
+        </div>
+        <div class="mb-4">
+            <label for="class_id" class="block text-gray-700">Class</label>
+            <select id="class_id" name="class_id" required class="w-full p-2 border rounded">
+                {% for cls in classes %}
+                <option value="{{ cls.id }}">{{ cls.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="mb-4">
+            <label for="contact" class="block text-gray-700">Contact</label>
+            <input type="text" id="contact" name="contact" required class="w-full p-2 border rounded">
+        </div>
+        <div class="mb-4">
+            <label for="area_of_residence" class="block text-gray-700">Area of Residence</label>
+            <input type="text" id="area_of_residence" name="area_of_residence" required class="w-full p-2 border rounded">
+        </div>
+        <div class="mb-4">
+            <label for="gender" class="block text-gray-700">Gender</label>
+            <select id="gender" name="gender" required class="w-full p-2 border rounded">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+        </div>
+        <div class="mb-4">
+            <label for="session" class="block text-gray-700">Session</label>
+            <input type="text" id="session" name="session" required class="w-full p-2 border rounded">
+        </div>
+        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded w-full">Add Student</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}Add Class{% endblock %}
+{% block content %}
+<div class="max-w-md mx-auto bg-white p-8 shadow-lg rounded-lg">
+    <h2 class="text-2xl font-bold mb-4">Add Class</h2>
+    <form method="POST">
+        <div class="mb-4">
+            <label for="name" class="block text-gray-700">Class Name</label>
+            <input type="text" id="name" name="name" required class="w-full p-2 border rounded">
+        </div>
+        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded w-full">Add Class</button>
+    </form>
+</div>
+{% endblock %}

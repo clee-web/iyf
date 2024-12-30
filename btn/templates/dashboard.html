@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <a href="{{ url_for('add_class') }}" class="bg-blue-500 text-white p-4 rounded shadow text-center">Add Classes</a>
+    <a href="{{ url_for('view_classes') }}" class="bg-green-500 text-white p-4 rounded shadow text-center">View Classes</a>
+    <a href="{{ url_for('add_student') }}" class="bg-yellow-500 text-white p-4 rounded shadow text-center">Add Students</a>
+    <a href="{{ url_for('view_students') }}" class="bg-indigo-500 text-white p-4 rounded shadow text-center">View Students</a>
+    <a href="{{ url_for('charts') }}" class="bg-purple-500 text-white p-4 rounded shadow text-center">View Charts</a>
+</div>
+{% endblock %}

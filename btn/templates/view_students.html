@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}View Students{% endblock %}
+{% block content %}
+<table class="table-auto w-full bg-white shadow-lg rounded-lg">
+    <thead>
+        <tr class="bg-gray-200">
+            <th class="p-2">Admin Number</th>
+            <th class="p-2">Name</th>
+            <th class="p-2">Class</th>
+            <th class="p-2">Contact</th>
+            <th class="p-2">Area of Residence</th>
+            <th class="p-2">Gender</th>
+            <th class="p-2">Session</th>
+            <th class="p-2">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for student in students %}
+        <tr>
+            <td class="p-2">{{ student.admin_number }}</td>
+            <td class="p-2">{{ student.name }}</td>
+            <td class="p-2">{{ student.class_id }}</td>
+            <td class="p-2">{{ student.contact }}</td>
+            <td class="p-2">{{ student.area_of_residence }}</td>
+            <td class="p-2">{{ student.gender }}</td>
+            <td class="p-2">{{ student.session }}</td>
+            <td class="p-2">
+                <a href="{{ url_for('edit_student', id=student.id) }}" class="text-blue-500">Edit</a> | 
+                <a href="{{ url_for('delete_student', id=student.id) }}" class="text-red-500">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

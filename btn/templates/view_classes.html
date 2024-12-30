@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}View Classes{% endblock %}
+{% block content %}
+<table class="table-auto w-full bg-white shadow-lg rounded-lg">
+    <thead>
+        <tr class="bg-gray-200">
+            <th class="p-2">Class ID</th>
+            <th class="p-2">Class Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for cls in classes %}
+        <tr>
+            <td class="p-2">{{ cls.id }}</td>
+            <td class="p-2">{{ cls.name }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
